@@ -6,7 +6,7 @@ function Filter(Details,index,countryData,navigate) {
     countryData.pop();
   }
   countryData.push(findCountry);
-  navigate("/country");
+  navigate(`/country/${findCountry.countryName}`);
 }
 
 export default Filter;

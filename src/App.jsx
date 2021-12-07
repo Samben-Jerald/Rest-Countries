@@ -41,11 +41,10 @@ function App() {
       <Routes>
         <Route path="/homepage" element={<HomePage />} />
         <Route path="/" element={<Navigate redirect to="/homepage" />} />
-        <Route path="/country" element={<CountryDetails />} />
-        {/* <Route path="/:country" element={<CountryDetails />} /> */}
+        <Route path="/country/:country" element={<CountryDetails />} />
         <Route
           path="*"
-          element={<h1 style={{ textAlign: "center" }}>Page Not Found</h1>}
+          element={<h1 style={{ textAlign: "center" }}>404 Page Not Found</h1>}
         />
       </Routes>
     </div>

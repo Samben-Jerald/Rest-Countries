@@ -11,7 +11,7 @@ import Loader from "../Component/Loader";
 
 export const countryData = [];
 const HomePage = () => {
-  
+
   const { countryDetails, sendRequest, isLoading } = useHttp();
   const [region, setRegion] = React.useState([]);
   const navigate = useNavigate();
@@ -34,7 +34,7 @@ const HomePage = () => {
       searchCriteria.pop();
     }
     countryData.push(searchCriteria);
-    navigate("/country");
+    navigate(`/country/${searchCriteria.flat().at(0).countryName}`);
   };
   const DataHandler = (index) => {
     Filter(countryDetails, index, countryData, navigate);
