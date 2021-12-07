@@ -1,0 +1,18 @@
+.inputClass {
+  width: 25rem;
+  padding: 15px 0 15px 40px;
+  border: none;
+  outline: none;
+}
+.changebackground {
+  background-color: hsl(209, 23%, 22%);
+  border-radius: 5px;
+  color: #fff;
+}
+.search-icon {
+  position: absolute;
+  margin: 12px;
+}
+input::placeholder {
+  color: hsl(0, 0%, 52%);
+}

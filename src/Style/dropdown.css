@@ -1,0 +1,25 @@
+.drop-down {
+  width: 14rem;
+  padding: 10px 10px;
+  border: none;
+  outline: none;
+}
+.search-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+  .search-container{
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  
+}
+
+@media only screen and (max-width: 400px) {
+  .header-container {
+    padding: 20px 1rem;
+  }
+}

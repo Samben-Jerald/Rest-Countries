@@ -1,0 +1,40 @@
+
+.card-container {
+  width: 280px;
+  height: 270px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "flag"
+  "content";
+  cursor: pointer;
+}
+
+.country-flag {
+  width: 280px;
+  height: 140px;
+  grid-area: flag;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.country-details {
+  display: flex;
+  flex-direction: column;
+  grid-area: content;
+  margin-left: 2rem;
+}
+.countryText {
+  font-size: 1rem;
+  padding-bottom: 10px;
+}
+.country-population {
+  font-size: 0.8rem;
+}
+.country-region {
+  font-size: 0.8rem;
+}
+.country-capital {
+  font-size: 0.8rem;
+}
+.heading {
+  font-weight: 600;
+}
