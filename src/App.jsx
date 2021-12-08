@@ -6,6 +6,7 @@ import HomePage from "./Pages/HomePage";
 import Header from "./Component/PageComponent/Header";
 import CountryDetails from "./Pages/CountryDetails";
 import { darkModeActions } from "./Store/index";
+import Footer from "./Component/PageComponent/Footer";
 
 function App() {
   
@@ -28,7 +29,6 @@ function App() {
   const ThemeHandler = () => {
     setDarkmode((prev) => !prev);
   };
-
   return (
     <div
       style={{
@@ -44,9 +44,10 @@ function App() {
         <Route path="/country/:country" element={<CountryDetails />} />
         <Route
           path="*"
-          element={<h1 style={{ textAlign: "center" }}>404 Page Not Found</h1>}
+          element={<h1 style={{ textAlign: "center",marginTop:"5rem" }}>404 Page Not Found</h1>}
         />
       </Routes>
+      {/* <Footer/> */}
     </div>
   );
 }

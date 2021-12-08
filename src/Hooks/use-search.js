@@ -5,29 +5,28 @@ const useSearch = () => {
   const [TypingState, setTypingState] = React.useState(false);
   const [error, setErrorState] = React.useState(false);
 
-  function SearchFilter(SearchData,details){
+  function SearchFilter(SearchData, details) {
     if (SearchData !== "") {
       setTypingState(true);
-      const search = details.filter(
-        (data) => data.countryName === SearchData
-      );
+      const silingSearchData= SearchData.slice(0,1).toUpperCase()+SearchData.slice(1,SearchData.length);
+      console.log(silingSearchData);
+      const search = details.filter((data) => data.countryName === silingSearchData);
       if (search.length > 0) {
         setErrorState(false);
       } else {
         setErrorState(true);
       }
       setSearchCriteria(search.flat());
-    } else {
-      setTypingState(false);
     }
+    setTypingState(false);
   }
- 
+
   return {
     searchCriteria,
     TypingState,
     error,
-    SearchFilter
-  }
+    SearchFilter,
+  };
 };
 
 export default useSearch;
