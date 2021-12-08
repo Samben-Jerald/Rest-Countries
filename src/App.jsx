@@ -47,7 +47,7 @@ function App() {
           element={<h1 style={{ textAlign: "center",marginTop:"5rem" }}>404 Page Not Found</h1>}
         />
       </Routes>
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 }

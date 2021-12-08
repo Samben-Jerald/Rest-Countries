@@ -22,6 +22,8 @@ const SeacrhCriteria = (props) => {
   const dropDownValueHandler = (event) => {
     props.sendRegionData(event.target.value)
   };
+
+
   return (
     <div className="search-container">
       <Input
@@ -31,8 +33,8 @@ const SeacrhCriteria = (props) => {
       />
       <CountryDropdown
         country={countryList}
-        defaultValue="Filter by country"
         onChange={dropDownValueHandler}
+        value={props.value}
       />
     </div>
   );
