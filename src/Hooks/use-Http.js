@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useCallback } from "react";
+import ResponseExtract from '../Resuablefunctions/ResponseExtract'
 
 const useHttp = () => {
   const [countryDetails, setCountryDetails] = React.useState([]);
@@ -12,24 +13,7 @@ const useHttp = () => {
         url: "https://restcountries.com/v2/all",
       });
       const response = await allCountries.data;
-      const extractDetails = [];
-      response.forEach((value, index) => {
-        extractDetails.push({
-          ...(value.name && { id: `id-${index}` }),
-          ...(value.name && { countryName: value.name }),
-          ...(value.region && { region: value.region }),
-          ...(value.population && { population: value.population }),
-          ...(value.capital && { capital: value.capital }),
-          ...(value.subregion && { subRegion: value.subregion }),
-          ...(value.nativeName && { nativeName: value.nativeName }),
-          ...(value.topLevelDomain && { topLevelDomain: value.topLevelDomain }),
-          ...(value.flags && { flags: value.flags }),
-          ...(value.currencies && { currencyName: value.currencies }),
-          ...(value.languages && { languages: value.languages }),
-          ...(value.borders && { borders: value.borders }),
-        });
-      });
-      setCountryDetails(extractDetails);
+      setCountryDetails(ResponseExtract(response));
       setIsLoading(false);
     } catch (err) {
       throw new Error("Something Went Wrong" + err, { cause: err });
