@@ -38,8 +38,6 @@ const useHttp = () => {
       setCountryDetails(ResponseExtract(response));
       if(allCountries.status === 200){
         loadingDispatcher({type:"FINISHED"})
-      } else{
-        throw new Error();
       }
     } catch (err) {
       loadingDispatcher({type:"ERROR"})

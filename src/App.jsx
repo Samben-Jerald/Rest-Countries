@@ -9,17 +9,14 @@ import { darkModeActions } from "./Store/index";
 import Footer from "./Component/PageComponent/Footer";
 
 function App() {
-  
   const darkModeState = useSelector((state) => state.darkmode.darstateMode);
   const dispatch = useDispatch();
   const [darkmode, setDarkmode] = React.useState(getMode);
 
   React.useEffect(() => {
     localStorage.setItem("Theme", JSON.stringify(darkmode));
-    dispatch(
-      darkModeActions.toogleMode(darkmode)
-    );
-  }, [darkmode,dispatch]);
+    dispatch(darkModeActions.toogleMode(darkmode));
+  }, [darkmode, dispatch]);
 
   function getMode() {
     const getState = JSON.parse(localStorage.getItem("Theme"));
@@ -39,15 +36,19 @@ function App() {
     >
       <Header onClick={ThemeHandler} />
       <Routes>
-        <Route path="/homepage" element={<HomePage />} />
         <Route path="/" element={<Navigate redirect to="/homepage" />} />
+        <Route path="/homepage" element={<HomePage />} />
         <Route path="/country/:country" element={<CountryDetails />} />
         <Route
           path="*"
-          element={<h1 style={{ textAlign: "center",marginTop:"5rem" }}>404 Page Not Found</h1>}
+          element={
+            <h1 style={{ textAlign: "center", marginTop: "5rem" }}>
+              404 Page Not Found
+            </h1>
+          }
         />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
